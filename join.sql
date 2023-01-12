@@ -12,36 +12,11 @@ WHERE `degrees`.`name` = "Corso di Laurea in Economia";
 2. Selezionare tutti i Corsi di Laurea Magistrale del Dipartimento di Neuroscienze
 
 
-SELECT * 
-FROM `courses`
-INNER JOIN degrees
-  ON courses.degree_id = degrees.id
+SELECT  * 
+FROM degrees
 INNER JOIN departments
   ON degrees.department_id = departments.id
-WHERE departments.name ="Dipartimento di Neuroscienze"
-AND degrees.level = "magistrale";
-
-
-
-
-SELECT DISTINCT *
-FROM `courses`
-INNER JOIN degrees
-  ON courses.degree_id = degrees.id
-INNER JOIN departments
-  ON degrees.department_id = departments.id
-WHERE departments.name ="Dipartimento di Neuroscienze"
-AND degrees.name LIKE "%Magistrale%";
-
-
-SELECT DISTINCT *
-FROM `courses`
-INNER JOIN degrees
-  ON courses.degree_id = degrees.id
-INNER JOIN departments
-  ON degrees.department_id = departments.id
-WHERE departments.name ="Dipartimento di Neuroscienze"
-AND degrees.name LIKE "%Corso di Laurea Magistrale%"
+WHERE departments.name LIKE "%Neuroscienze%"
 AND degrees.level = "magistrale";
 
 
